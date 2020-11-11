@@ -1,6 +1,6 @@
 const Login = (req, res, db, bcrypt, jwt) => {
   const { email, password } = req.body;
-  //console.log(email, password);
+  console.log(email, password);
   try {
     db.select('*')
       .from('login')
@@ -51,7 +51,7 @@ const Login = (req, res, db, bcrypt, jwt) => {
       })
       .catch((err) => {
         console.log(err);
-        res.status(400).json('Invalid Credentials');
+        res.status(400).json('Invalid Credentials3');
       });
   } catch (error) {
     console.log(error);
