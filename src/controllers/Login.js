@@ -41,12 +41,12 @@ const Login = (req, res, db, bcrypt, jwt) => {
               }
             })
             .catch((err) => {
-              res.status(400).json('Invalid Credentials');
+              res.status(400).json('Invalid Credentials1');
               console.log(err);
             });
         } else {
           console.log('err');
-          res.status(400).json('Invalid Credentials');
+          res.status(400).json('Invalid Credentials2');
         }
       })
       .catch((err) => {
