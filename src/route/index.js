@@ -9,7 +9,7 @@ const db = knex({
 
   client: 'pg',
   connection: {
-    host: process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URL,
     ssl: true
     //host: process.env.HOST,
     // user: process.env.USER,
@@ -17,6 +17,16 @@ const db = knex({
     // database: process.env.DATABASE,
   },
 });
+
+// const db = knex({
+//   client: 'pg',
+//   connection: {
+//     host: process.env.HOST,
+//     user: process.env.USER,
+//     password: process.env.PASSWORD,
+//     database: process.env.DATABASE,
+//   },
+// });
 const Index = require('../controllers/Index');
 const AddProduct = require('../controllers/AddProduct');
 const DeleteProduct = require('../controllers/DeleteProduct');
