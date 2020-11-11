@@ -6,7 +6,7 @@ const Register = (req, res, db, bcrypt) => {
     .from('login')
     .where('email', '=', email)
     .then(user => {
-      console.log(user.length)
+      // console.log(user.length)
 
       if (user.length > 0) {
         //console.log(user)
