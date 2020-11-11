@@ -3,13 +3,20 @@ const route = express.Router();
 const knex = require('knex');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
+
 const db = knex({
+
   client: 'pg',
   connection: {
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
+    host: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+    //host: process.env.HOST,
+    // user: process.env.USER,
+    // password: process.env.PASSWORD,
+    // database: process.env.DATABASE,
   },
 });
 const Index = require('../controllers/Index');
